@@ -107,7 +107,7 @@ when isMainModule:
     var
         cmd: string
         n: int
-        async, vs: bool = false
+        async: bool = false
     setControlCHook handleControlC
     win = getScreenSize()
     for kind, key, val in getopt():
@@ -120,9 +120,6 @@ when isMainModule:
                 n = parseInt val
             of "async":
                 async = true
-            # TODO
-            of "vs", "variable-screen":
-                vs = true
             else: discard
         of cmdEnd:
             discard
